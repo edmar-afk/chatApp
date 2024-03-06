@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */ /* eslint-disable react/no-unescaped-entities */ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";import { faCheckCircle, faUserAlt } from "@fortawesome/free-solid-svg-icons";import axios from "axios";
+/* eslint-disable react/prop-types */ /* eslint-disable react/no-unescaped-entities */ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";import { faCheckCircle, faUserAlt } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import noMessage from "../assets/no-message.png";
@@ -21,7 +22,7 @@ function Chatbox() {
 		const fetchMessages = async () => {
 			try {
 				const response = await axios.get(
-					`http://127.0.0.1:8000/api/conversation/?sender_id=${userId}&receiver_id=${receiverId}`,
+					`https://chatapimain.pythonanywhere.com/api/conversation/?sender_id=${userId}&receiver_id=${receiverId}`,
 					{
 						headers: {
 							Authorization: `Bearer ${localStorage.getItem("access_token")}`,

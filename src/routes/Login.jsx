@@ -1,6 +1,8 @@
-import { useState } from "react";import axios from "axios";import Swal from "sweetalert2";import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";import axios from "axios";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
-
+import Logo from '../assets/logo.png';
 const Login = () => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
@@ -9,7 +11,7 @@ const Login = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const response = await axios.post("http://127.0.0.1:8000/api/token/", {
+			const response = await axios.post("https://chatapimain.pythonanywhere.com/api/token/", {
 				username,
 				password,
 			});
@@ -48,8 +50,8 @@ const Login = () => {
 			<div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
 				<div className="sm:mx-auto sm:w-full sm:max-w-sm">
 					<img
-						className="mx-auto h-10 w-auto"
-						src="#"
+						className="mx-auto h-24 w-auto"
+						src={Logo}
 						alt="Login"
 					/>
 					<h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white animate-jump animate-once">
@@ -115,15 +117,6 @@ const Login = () => {
 							</button>
 						</div>
 					</form>
-
-					<p className="mt-10 text-center text-sm text-gray-500">
-						No account?
-						<Link
-							to="/register"
-							className="font-semibold leading-6 ml-1 text-indigo-600 hover:text-indigo-500">
-							Register Here
-						</Link>
-					</p>
 				</div>
 			</div>
 		</>

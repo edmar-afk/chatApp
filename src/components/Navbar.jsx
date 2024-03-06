@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -11,7 +10,7 @@ function Navbar() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await axios.get(`http://127.0.0.1:8000/api/users/${receiverId}/`);
+				const response = await axios.get(`https://chatapimain.pythonanywhere.com/api/users/${receiverId}/`);
 				setReceiver(response.data);
 			} catch (error) {
 				console.error("Error fetching data:", error);

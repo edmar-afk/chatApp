@@ -21,11 +21,13 @@ function Sidebar() {
 		const fetchData = async () => {
 			try {
 				// First Axios request
-				const staffUsersResponse = await axios.get("http://127.0.0.1:8000/api/staffs/");
+				const staffUsersResponse = await axios.get("https://chatapimain.pythonanywhere.com/api/staffs/");
 				setStaffUsers(staffUsersResponse.data);
 
 				// Second Axios request
-				const studentUserResponse = await axios.get(`http://127.0.0.1:8000/api/users/messaged/${currentUser}/`);
+				const studentUserResponse = await axios.get(
+					`https://chatapimain.pythonanywhere.com/api/users/messaged/${currentUser}/`
+				);
 				setStudents(studentUserResponse.data);
 			} catch (error) {
 				console.error("Error fetching data:", error);

@@ -1,5 +1,7 @@
-import { useState } from "react";import axios from "axios";import swal from "sweetalert2";import { useNavigate } from "react-router-dom";
-
+import { useState } from "react";
+import axios from "axios";
+import swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 function Register() {
 	const navigateTo = useNavigate();
 	const [formData, setFormData] = useState({
@@ -23,7 +25,7 @@ function Register() {
 
 		try {
 			const response = await axios.post(
-				"http://127.0.0.1:8000/api/register/",
+				"https://chatapimain.pythonanywhere.com/api/register/",
 				{
 					username,
 					first_name,

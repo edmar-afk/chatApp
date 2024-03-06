@@ -1,4 +1,5 @@
-import { faCommentAlt, faPaperPlane } from "@fortawesome/free-solid-svg-icons";import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCommentAlt, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useState } from "react";
 import Swal from "sweetalert2";
@@ -19,17 +20,17 @@ function Messagebox(props) {
 	const handleMessageChange = (e) => {
 		setMessage(e.target.value);
 	};
-	
+
 	const handleSendMessage = async (e) => {
 		e.preventDefault();
 		try {
 			// const accessToken = localStorage.getItem("access_token");
 			// console.log("Access Token:", accessToken); // Log access token for debugging
 			const response = await axios.post(
-				"http://127.0.0.1:8000/api/messages/",
+				"https://chatapimain.pythonanywhere.com/api/messages/",
 				{
 					message,
-					sender:userId,
+					sender: userId,
 					receiver,
 				},
 				{
