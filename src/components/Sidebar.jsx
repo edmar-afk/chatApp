@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";import {
 	faArrowRightFromBracket,
 	faClock,
 	faPeopleGroup,
@@ -72,9 +71,7 @@ function Sidebar() {
 				{toggleSideBar && (
 					<div
 						className="flex text-green-400 bg-slate-950/70 w-full h-screen z-30"
-						onClick={() => setToggleSideBar(!toggleSideBar)}>
-						
-					</div>
+						onClick={() => setToggleSideBar(!toggleSideBar)}></div>
 				)}
 				<button
 					type="button"
@@ -217,6 +214,7 @@ function Sidebar() {
 														className="text-4xl animate-spin mt-4"
 													/>
 													<p className="text-sm mt-4">No students here....</p>
+													<p className="text-sm mt-2">Use Search to start conversation</p>
 												</div>
 											</>
 										) : (
