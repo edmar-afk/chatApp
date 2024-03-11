@@ -1,4 +1,4 @@
-import { faCommentAlt, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { faCommentAlt, faPaperPlane } from "@fortawesome/free-solid-svg-icons";import Gradient from "./Gradient";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { useState } from "react";
@@ -54,7 +54,7 @@ function Messagebox(props) {
 
 	return (
 		<>
-			<div className="sticky bottom-0 w-full bg-gray-900 p-4">
+			<div className="sticky bottom-0 w-full bg-slate-950 p-4">
 				<div>
 					<label
 						htmlFor="message"
@@ -68,14 +68,16 @@ function Messagebox(props) {
 								className="text-white"
 							/>
 						</div>
+						<Gradient />
 						<form onSubmit={handleSendMessage}>
+							
 							<input
 								type="text"
 								id="message"
 								name="message"
 								value={message}
 								onChange={handleMessageChange}
-								className="block w-full p-4 ps-10 text-sm rounded-lg bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+								className="block w-full p-4 ps-10 text-sm rounded-lg bg-slate-900 border-green-600 placeholder-gray-400 text-white focus:ring-green-500 focus:border-green-500"
 								placeholder="Type Message here..."
 								required
 							/>

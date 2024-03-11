@@ -32,7 +32,7 @@ function Messages() {
 			<Sidebar
 				staff={staff}
 			/>
-			<div className="p-4 sm:ml-64 mt-12 sm:mt-0 overflow-x-visible">
+			<div className="p-4 sm:ml-72 mt-12 sm:mt-0 overflow-x-visible">
 				<Navbar messageId={currentUser} />
 				<Chatbox />
 				{authenticated ? (

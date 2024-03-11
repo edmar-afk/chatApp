@@ -7,6 +7,7 @@ export default {
 		fontFamily: {
 			sans: "Segoe UI, Arial, sans-serif",
 		},
+		
 	},
 	plugins: [
 		// ...

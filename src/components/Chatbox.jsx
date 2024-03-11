@@ -85,7 +85,7 @@ function Chatbox() {
 	return (
 		<>
 			{messages.length === 0 ? (
-				<div className="flex flex-col justify-center items-center text-gray-400 py-4">
+				<div className="flex flex-col justify-center items-center text-gray-400 py-4 bg-slate-950">
 					<img
 						src={noMessage}
 						className="w-[500px]"
@@ -98,22 +98,20 @@ function Chatbox() {
 				messages.map((message) => (
 					<div key={message.id}>
 						{userId == message.sender.id ? (
-							<div className="flex justify-end items-start gap-2.5 py-4">
-								<div className="flex flex-col w-full max-w-[270px] break-words md:max-w-[500px] leading-1.5 p-4 border-gray-200 rounded-s-xl rounded-br-xl bg-green-500">
-									<div className="flex items-center space-x-2">
-										<span className="text-sm font-semibold text-white">You</span>
-										<span className="text-sm font-normal text-white">
-											<FontAwesomeIcon icon={faCheckCircle} />
-										</span>
+							<>
+								<div className="flex justify-end items-start gap-2.5 py-4 relative mb-8">
+									<div className="flex flex-col w-full max-w-[270px] break-words md:max-w-[500px] leading-1.5 p-2 border-2 border-slate-800 rounded-s-xl rounded-br-xl bg-slate-950">
+										<p className="text-xs sm:text-sm font-normal py-2.5 text-white">{message.message}</p>
+										<p className="text-white text-xs absolute bottom-[-5px] right-16">
+											{formatTimestampToManilaTime(message.sent_time)}
+										</p>
 									</div>
-									<p className="text-xs sm:text-sm font-normal py-2.5 text-white">{message.message}</p>
-									<span className="text-xs font-bold text-white">{formatTimestampToManilaTime(message.sent_time)}</span>
+									<FontAwesomeIcon
+										icon={faUserAlt}
+										className=" text-green-400 bg-slate-900 p-4 rounded-full"
+									/>
 								</div>
-								<FontAwesomeIcon
-									icon={faUserAlt}
-									className=" text-white bg-green-800 p-4 rounded-full"
-								/>
-							</div>
+							</>
 						) : (
 							<div className="flex items-start gap-2.5 py-4">
 								<FontAwesomeIcon
