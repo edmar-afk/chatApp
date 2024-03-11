@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */ /* eslint-disable react/no-unescaped-entities */ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";import { faCheckCircle, faUserAlt } from "@fortawesome/free-solid-svg-icons";
+/* eslint-disable react/prop-types */ /* eslint-disable react/no-unescaped-entities */ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserAlt } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -116,9 +117,9 @@ function Chatbox() {
 							<div className="flex items-start gap-2.5 py-4">
 								<FontAwesomeIcon
 									icon={faUserAlt}
-									className=" text-white bg-gray-800 p-4 rounded-full"
+									className=" text-green-400 bg-slate-900 p-4 rounded-full"
 								/>
-								<div className="flex flex-col w-full min-w-[270px] break-words sm:max-w-[500px] leading-1.5 p-4 border-gray-200 rounded-e-xl rounded-es-xl bg-gray-700">
+								<div className="flex flex-col w-full min-w-[270px] break-words sm:max-w-[500px] leading-1.5 p-4 border-slate-600 rounded-e-xl rounded-es-xl bg-slate-900">
 									<div className="flex items-center space-x-2">
 										<span className="text-sm font-semibold text-white ">{message.sender.first_name}</span>
 										<span className="text-sm font-normal text-green-400">
@@ -126,13 +127,7 @@ function Chatbox() {
 										</span>
 									</div>
 									<p className="text-sm font-normal py-2.5 text-white">{message.message}</p>
-									<span className="text-sm font-bold text-green-400">
-										Delivered
-										<FontAwesomeIcon
-											icon={faCheckCircle}
-											className="ml-1"
-										/>
-									</span>
+									<span className="text-sm font-bold text-green-400">Delivered</span>
 								</div>
 							</div>
 						)}

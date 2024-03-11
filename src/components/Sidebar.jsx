@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";import {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";import { Tooltip } from "react-tooltip";import {
 	faArrowRightFromBracket,
 	faClock,
 	faPeopleGroup,
@@ -98,10 +98,17 @@ function Sidebar() {
 						<div className="flex flex-col justify-center h-screen bg-slate-950 z-20 w-[70px]">
 							<div className="text-center">
 								<FontAwesomeIcon
+									data-tooltip-id="not-available"
+									data-tooltip-content="Group Chat feature not yet available"
+									data-tooltip-place="top"
 									icon={faPeopleGroup}
-									className="text-white border-2 p-3 rounded-xl bg-slate-900 border-green-900"
+									className="text-white hover:cursor-pointer border-2 p-3 rounded-xl bg-slate-900 border-green-900"
 								/>
 								<p className="text-xs text-white">Groups</p>
+								<Tooltip
+									id="not-available"
+									style={{ backgroundColor: "rgb(42, 170, 138)", color: "#333", fontSize: "12px", fontWeight: "700" }}
+								/>
 							</div>
 
 							<div
